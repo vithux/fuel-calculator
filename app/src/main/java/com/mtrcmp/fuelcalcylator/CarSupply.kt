@@ -1,7 +1,7 @@
 package com.mtrcmp.fuelcalcylator
 
 data class CarSupply(
-    var fuelPrice: Double?,
+    var fuelPrice: Double,
     var kilometersRotated: Double,
     var littersSupply: Double
 ) {
@@ -9,4 +9,7 @@ data class CarSupply(
         return this.kilometersRotated / this.littersSupply
     }
 
+    fun kmperprice(): Double {
+        return this.fuelPrice / this.kilometersRotated
+    }
 }

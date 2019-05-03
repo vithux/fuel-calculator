@@ -17,7 +17,7 @@ class ListAdapterCarSupply(context: Context, list: ArrayList<CarSupply>) :
         val carSupplyObject = this.getItem(position)
         val convertView =  LayoutInflater.from(this.context).inflate(R.layout.supply_list, null);
 
-        convertView.textViewQuilometros.setText(carSupplyObject.kilometersRotated.toString())
+        convertView.kmperlitter.text = carSupplyObject.kmperliter().toString()
 
         return convertView
 

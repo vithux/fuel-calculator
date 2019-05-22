@@ -20,10 +20,10 @@ class ListAdapterCarSupply(context: Context, list: ArrayList<CarSupply>) :
         val convertView =  LayoutInflater.from(this.context).inflate(R.layout.supply_list, null);
         val df = DecimalFormat("#.##")
 
-        convertView.kmperlitter.text = df.format(carSupplyObject.kmperliter())
-        convertView.kmperprice.text = df.format(carSupplyObject.kmperprice())
-        convertView.km.text = df.format(carSupplyObject.kilometersRotated)
-        convertView.lt.text = df.format(carSupplyObject.littersSupply)
+        convertView.kmperlitter.text = df.format(carSupplyObject?.kmperliter() ?: 0)
+        convertView.kmperprice.text = df.format(carSupplyObject?.kmperprice() ?: 0)
+        convertView.km.text = df.format(carSupplyObject?.kilometersRotated ?: 0)
+        convertView.lt.text = df.format(carSupplyObject?.littersSupply ?: 0)
 
         return convertView
 

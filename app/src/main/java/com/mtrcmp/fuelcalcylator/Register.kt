@@ -23,17 +23,17 @@ class Register : AppCompatActivity() {
         var error = false
 
         if (editPrice.isEmpty()) {
-            price.setError("Preço é obrigatório")
+            price.error = "Preço é obrigatório"
             error = true
         }
 
         if (editKm.isEmpty()) {
-            kilometers.setError("KM rodados é obrigatório")
+            kilometers.error ="KM rodados é obrigatório"
             error = true
         }
 
         if (editLiters.isEmpty()) {
-            liters.setError("Litros abastecidos é obrigatório")
+            liters.error ="Litros abastecidos é obrigatório"
             error = true
         }
 

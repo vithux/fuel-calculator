@@ -25,9 +25,6 @@ class MainActivity : AppCompatActivity() {
         buttonIncluir.setOnClickListener {
             val intent = Intent(this, Register::class.java)
             startActivityForResult(intent, 1)
-
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show()
         }
     }
 
@@ -35,14 +32,15 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (resultCode == Activity.RESULT_OK) {
+
             var carSupply = CarSupply(
                 data!!.getDoubleExtra("price", 0.0),
-                data!!.getDoubleExtra("km", 0.0),
-                data!!.getDoubleExtra("liters", 0.0)
+                data.getDoubleExtra("km", 0.0),
+                data.getDoubleExtra("liters", 0.0)
             )
 
             arrayCarSupply.add(carSupply)
-            val adapter = ListAdapterCarSupply(this,arrayCarSupply)
+            val adapter = ListAdapterCarSupply(this, arrayCarSupply)
             listView.setAdapter(adapter)
 
 
